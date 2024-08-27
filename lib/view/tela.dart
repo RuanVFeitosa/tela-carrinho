@@ -46,7 +46,7 @@ class tela extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(left: 30),
+                      margin: const EdgeInsets.only(left: 20),
                       child: const Text(
                         "\$12.96",
                         style: TextStyle(
