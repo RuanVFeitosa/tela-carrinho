@@ -22,16 +22,22 @@ class ginger extends StatelessWidget {
               ),
             ],
           ),
-          const Column(
+          Column(
             children: [
-              Text('Ginger'),
-              Text('250gm, Price'),
+              const Text('Ginger'),
+              const Text('250gm, Price'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-              Icon(Icons.remove),
-              Text("1"),
-              Icon(Icons.add_box_rounded, color: Colors.green,),
+               IconButton(
+                    onPressed: () {}, // Você precisa definir uma função para o onPressed
+                    icon: const Icon(Icons.remove),
+                  ),
+              const Text("1"),
+              IconButton(
+                    onPressed: () {}, // Você precisa definir uma função para o onPressed
+                    icon: const Icon(Icons.add_box_rounded, color: Colors.green,),
+                  ),
                 ]
               )
             ]

@@ -22,16 +22,22 @@ class fruits extends StatelessWidget {
               ),
             ],
           ),
-          const Column(
+          Column(
             children: [
-              Text('Organic Bananas'),
-              Text('12kg, Price'),
+              const Text('Organic Bananas'),
+              const Text('12kg, Price'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-              Icon(Icons.remove),
-              Text("1"),
-              Icon(Icons.add_box_rounded, color: Colors.green,),
+              IconButton(
+                    onPressed: () {}, // Você precisa definir uma função para o onPressed
+                    icon: const Icon(Icons.remove),
+                  ),
+              const Text("1"),
+              IconButton(
+                    onPressed: () {}, // Você precisa definir uma função para o onPressed
+                    icon: const Icon(Icons.add_box_rounded, color: Colors.green,),
+                  ),
                 ]
               )
             ]
