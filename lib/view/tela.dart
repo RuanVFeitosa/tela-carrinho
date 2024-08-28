@@ -1,3 +1,4 @@
+import 'package:atv01/models/compras_model.dart';
 import 'package:atv01/widgets/button.dart';
 import 'package:atv01/widgets/eggs.dart';
 import 'package:atv01/widgets/fruits.dart';
@@ -10,55 +11,68 @@ class tela extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ComprasModel minhaCompra = ComprasModel(
+      imagem: 'assets/images/tomatoes.png',
+      titulo: 'Bell Pepper Red',
+      medida: '1kg, price',
+      quantidade: 2,
+      preco: 4.99,
+    );
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('My Cart'),
-          centerTitle: true,
-        ),
-        body: const Column(
-          children: [pepper(), eggs(), fruits(), ginger()],
-        ),
-        bottomNavigationBar: SizedBox(
-          height: 90,
-          width: 500,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green, // cor do botão
-                  padding: const EdgeInsets.only(
-                      left: 120, right: 90, top: 30, bottom: 30),
-                  elevation: 5, // sombreamento do botão
-                  shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(20)), // forma do botão
-                ),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      "Ir para o carrinho",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.white, // cor do texto
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 20),
-                      child: const Text(
-                        "\$12.96",
-                        style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            backgroundColor: Color.fromRGBO(0, 0, 0, 200)),
-                      ),
-                    )
-                  ],
+      appBar: AppBar(
+        title: const Text('My Cart'),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Pepper(compra: minhaCompra),
+          eggs(),
+          fruits(),
+          ginger(),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        height: 90,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
                 ),
               ),
-            ],
-          ),
-        ));
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Ir para o carrinho",
+                    style: TextStyle(
+                     fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 20),
+                    child: Text(
+                      "\$12.96",
+                      style: TextStyle(
+                        color: Colors.white,
+                        backgroundColor: Colors.black.withOpacity(0.2),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
